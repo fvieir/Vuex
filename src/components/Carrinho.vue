@@ -19,7 +19,7 @@
             </table>
             <hr>
             <div class="total">
-                <span>Total: <strong>{{ total | dinheiro }}</strong></span>
+                <span>Total: <strong>{{ total | money }}</strong></span>
             </div>
         </div>
     </Painel>
