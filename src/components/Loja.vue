@@ -17,8 +17,14 @@ export default {
     data() {
         return {
             sequencia: 1,
-            quantidade: 1,
-            preco: 9.99,
+        }
+    },
+    computed:{
+        quantidade() {
+            return this.$store.state.quantidade
+        },
+        preco () {
+            return this.$store.state.preco
         }
     },
     methods: {
@@ -33,6 +39,7 @@ export default {
             }
             this.sequencia++
 
+            // eslint-disable-next-line no-console
             // Usando store para adicionar produtos
             // this.$store.state.produtos.push(produto)
 

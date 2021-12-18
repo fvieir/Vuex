@@ -7,7 +7,9 @@ Vue.use(Vuex)
 // Funçao construtora
 export default new Vuex.Store({
     state: {
-        produtos: []
+        produtos: [],
+        quantidade: 2,
+        preco: 19.99
     },
     getters: {
         valorTotal(state) {
@@ -19,7 +21,13 @@ export default new Vuex.Store({
     mutations: {
         adicionarProduto(state, payload) {
             return state.produtos.push(payload)
-       }
+       },
+        setQuantidade (state, payload) {
+            state.quantidade = payload
+        },
+        setPreco (state, payload) {
+            state.preco = payload
+        }
     },
     // chamadas Ajax. Colocando setTimeout para simular chamadas ajax.
     actions: {
@@ -28,9 +36,12 @@ export default new Vuex.Store({
     //             context.commit('adicionarProduto', payload)
     //         },1000)
     //    }
-        // Usando oeprador destructuring 
+
+        // Usando operador destructuring 
         adicionarProduto( { commit }, payload) {
-            commit('adicionarProduto', payload)
+            setTimeout(()=>{
+                commit('adicionarProduto', payload)
+            },1000)
         }
    }
 })
