@@ -48,6 +48,8 @@ export default {
             //this.$store.dispatch('adicionarProduto', produto)
 
             // Acessar uma mutations e actions com ...mapActions e ...mapMutations
+            // eslint-disable-next-line no-console
+            console.log(this.$store.getters.getNome)
             this.adicionarProduto(produto)
         }
     }
